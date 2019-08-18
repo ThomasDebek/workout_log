@@ -7,6 +7,8 @@ ruby '2.6.2'
 gem 'haml'
 gem 'simple_form'
 gem 'bootstrap-sass'
+gem 'jquery-rails'
+gem 'coffee-rails'
 
 gem 'rails', '~> 5.2.3'
 gem 'sqlite3'
