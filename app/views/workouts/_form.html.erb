@@ -1,0 +1,22 @@
+<%= form_with(model: @workout, local: true) do |f| %>
+  <p>
+    <%= f.label :date  %>
+    <%= f.datetime_select :date %>
+  </p>
+  <p>
+    <%= f.label :workout  %>
+    <%= f.text_field :workout %>
+  </p>
+  <p>
+    <%= f.label :mood  %>
+    <%= f.text_field :mood %>
+  </p>
+  <p>
+    <%= f.label :length  %>
+    <%= f.text_field :length %>
+  </p>
+  <p>
+    <%= f.button :submit   %>
+  </p>
+
+<% end  %>
