@@ -30,10 +30,10 @@ class ExercisesController < ApplicationController
   def destroy
     @exercise = @workout.exercises.find(params[:id])
     if @exercise.destroy
-      redirect_to root_path(@workout)
+      redirect_to workout_path(@workout)
       flash[:notice] = "Exercises successfully deleted"
     else
-      redirect_to root_path(@workout)
+      redirect_to workout_path(@workout)
       flash[:notice] = "Somthing is wrong, please try again"
     end
   end
