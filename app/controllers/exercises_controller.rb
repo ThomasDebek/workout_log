@@ -2,11 +2,12 @@ class ExercisesController < ApplicationController
   before_action :set_workout
 
   def create
-    @exercise = @workout.exercises.create(:workout_params)
+    @workout = Workout.find(params[:workout_id])
+    @exercise = @workout.exercises.create(workout_params)
     if @exercise.save
       redirect_to workout_path(@workout)
     else
-      redirect_to root_path(@workout)
+      redirect_to workout_path(@workout)
       flash[:notice] = "Somethig is wrong. Please try again"
     end
   end
@@ -48,3 +49,5 @@ class ExercisesController < ApplicationController
   end
 
 end
+
+
