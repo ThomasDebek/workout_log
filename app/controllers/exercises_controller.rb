@@ -19,7 +19,7 @@ class ExercisesController < ApplicationController
 
   def update
     @exercise = @workout.exercises.find(params[:id])
-    if @exercise.update(:workout_params)
+    if @exercise.update(workout_params)
       redirect_to workout_path(@workout)
       flash[:notice] = "Exercises successfully updated"
     else

@@ -1,8 +1,21 @@
 #workout
-  %p= @workout.date
-  %p= @workout.workout
-  %p= @workout.mood
-  %p= @workout.length
+  %p
+    %strong Date:
+    = @workout.date
+
+    %strong Workout
+    = @workout.workout
+
+    %strong Mood:
+    = @workout.mood
+
+    %strong Length:
+    = @workout.length
+
+
+  = link_to "Back", root_path
+  = link_to "Edit", edit_workout_path(@workout)
+  = link_to "Delete", workout_path(@workout), method: :delete, data: { confirm: "Are you sure?" }
 
 #exercises
   %h2 Exercises
@@ -11,6 +24,3 @@
   %h3 Add an exercise
   = render "exercises/form"
 
-= link_to "Back", root_path
-= link_to "Edit", edit_workout_path(@workout)
-= link_to "Delete", workout_path(@workout), method: :delete, data: { confirm: "Are you sure?" }
